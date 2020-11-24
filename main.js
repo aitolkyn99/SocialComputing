@@ -65,7 +65,7 @@ const getChallenges = async () => {
   var create = el(
     ".text-center",
     { style: { marginTop: "1vh" } },
-    el("button.btn btn-info", {
+    el("button.btn ", {
       innerHTML: `<i class="fas fa-plus" style="margin-right: 5px"></i>Create a challenge`,
       "data-toggle": "modal",
       "data-target": "#exampleModal",
@@ -77,7 +77,7 @@ const getChallenges = async () => {
   var cards = el("");
   challenges.reverse().forEach((challenge) => {
     const remaining = getRemaining(challenge.createdAt);
-    joinButton = el("button.btn btn-success float-right", {
+    joinButton = el("button.btn bjoin float-right", {
       innerText: "Joined",
       disabled: true,
     });
@@ -85,7 +85,7 @@ const getChallenges = async () => {
       window.ch = challenge;
       var joinButton;
       if (!challenge.participants[userId])
-        joinButton = el("button.btn btn-primary float-right", {
+        joinButton = el("button.btn float-right", {
           innerText: "Join",
           onclick: () => {
             joinChallenge = challenge.id;
@@ -177,7 +177,7 @@ const submit = () => {
       id: challengeId,
       createdAt: now,
     });
-  const joinButton = el("button.btn btn-primary float-right", {
+  const joinButton = el("button.btn float-right", {
     innerText: "Join",
     onclick: () => {
       joinChallenge = challengeId;
