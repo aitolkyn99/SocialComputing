@@ -333,7 +333,7 @@ function signOut() {
   });
   eraseCookie("userId");
   userId = "";
-  Router();
+  Router("chal");
 }
 
 Router();
