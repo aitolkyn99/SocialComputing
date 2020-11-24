@@ -75,7 +75,7 @@ const getProfile = async (profileId = userId) => {
             '<i class="material-icons nav__icon">play_circle_filled</i>',
           onclick: () => {
             window.open(
-              `https://firebasestorage.googleapis.com/v0/b/fitmeasure-ac726.appspot.com/o/${profileId}%2F${element.id}?alt=media`
+              `https://firebasestorage.googleapis.com/v0/b/quicknsweaty.appspot.com/o/${profileId}%2F${element.id}?alt=media`
             );
           },
         })
