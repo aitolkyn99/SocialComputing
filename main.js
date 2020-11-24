@@ -184,7 +184,7 @@ const submit = () => {
     .set({
       ...formValues,
       createdBy: userId,
-      participants: { [userId]: { score: 0 } },
+      participants: {},
       id: challengeId,
       createdAt: now,
     });
