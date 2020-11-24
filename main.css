@@ -78,3 +78,92 @@ body {
 #challenges1 {
   height: 8vh;
 }
+
+.root {
+  max-width: 800px !important;
+}
+.addcard {
+  padding: 0;
+}
+
+.form-control {
+  border: 0 !important;
+}
+
+.form-control:active {
+  border: 0 !important;
+}
+
+#me {
+  /* background-color: rgb(71, 71, 71); */
+  background-color: #d2b309;
+  font-weight: bold
+}
+/* .table {
+  overflow: auto;
+} */
+
+#challenges .card-text {
+  color: red;
+  font-weight: bold;
+}
+
+#challenges .card-title {
+  color: wheat;
+}
+
+#challenges .card-title.large {
+  font-weight: bold;
+}
+
+#challenges .card-body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("img/c1.jpg");
+  z-index: ;
+  background-size: contain;
+  background-color: #cccccc;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+  color: red;
+  font-weight: bold;
+}
+
+.g-signin2 {
+  width: 100%;
+}
+
+.g-signin2 > div {
+  margin: 0 auto;
+}
+
+#root .dropdown-menu {
+  width: 97%;
+}
+
+#root .dropdown-toggle {
+  background-color: black
+}
+
+#exampleModalCenterTitle {
+  font-weight: bold;
+}
+
+#challenges1 .btn {
+  background-color: #d2b309;
+}
+
+#challenges .card-title .btn {
+  background-color: #d2b309;
+}
+
+#challenges .card-title .bjoin {
+  background-color:#8a8254
+}
