@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- STYLES AND RELATED -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="main.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    <!-- END OF STYLES -->
+
+
+    <title>Gym at home F & A Production</title>
+  </head>
+  <body>
+
+    <nav class="nav__new" id="navigation" hidden>
+      <div id='chal' onclick="Router('chal'); getChallenges()" class="nav__link nav__link--active ripple">
+        <i class="material-icons nav__icon">assignment</i>
+        <span class="nav__text">Challenges</span>
+      </div>
+      <div id='lead' onclick="Router('lead'); getLeaderBoard()" class="nav__link ripple">
+        <span class="material-icons iconify" data-icon="mdi-trophy" data-inline="false"></span>
+        <span class="nav__text">Leaderboard</span>
+      </div>
+      <div onclick="Router('profile'); getProfile()" id='profile' class="nav__link ripple">
+        <i class="material-icons nav__icon">person</i>
+        <span class="nav__text">Profile</span>
+      </div>
+    </nav>
+    
+    <div class="container" id="info" hidden>
+      <div class="jumbotron text-center" style="margin-top: 30%;">
+        <h2 class="card-title">QuickNSweaty</h2>
+        
+        <p class="blue-text my-4 font-weight-bold">1 minute sports challenges</p>
+        <div class="row d-flex justify-content-center">
+          <div class="col-xl-7 pb-2">
+          <blockquote><p class="card-text"></p>Create your own 1 minute sports challenges and compete with friends and strangers!</blockquote>
+          </div>
+        </div>
+        <hr class="my-4">
+          <div class="col-12"><div class="g-signin2 text-center" data-width="150" data-height="50" data-onsuccess="onSignIn"></div></div>
+
+        
+      </div>
+    </div>
+    
+    <div id="root">     
+
+
+      
+
+    </div>
+
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create a new challenge</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="md-form">
+              <input placeholder=" " type="text" id="title" class="form-control" required>
+              <label for="title">Exercise name:</label>
+              
+            </div>
+            <div class="md-form">
+
+              <input placeholder=" " type="text" id="description" class="form-control" required>
+              <label for="title">Challenge description:</label>
+            </div>  
+          </div>
+          <div class="modal-footer">
+            <btn class="btn btn-primary float-right" onclick="submit()">
+              <i class="fas fa-plus" onclick="createChallenge()" style="margin-right: 5px" aria-hidden="true"></i>
+              Create
+            </btn>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body desc">
+        
+      </div>
+      <div class = "modal-body"> 
+      <input type="text" id="defaultContactFormName" class="modal-body form-control mb-4" placeholder="Score">
+      </div> 
+      <div class="input-group modal-body">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupFileAddon01">Upload video</span>
+        </div>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" accept="video/*" capture="camera" id="inputGroupFile01"
+            aria-describedby="inputGroupFileAddon01">
+          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick = clickJoin()>Join</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </body>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="1020504775390-a6a6tpuhji7hordf4c7hn21afnvnkm1i.apps.googleusercontent.com">
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+
+    <script src="https://redom.js.org/redom.min.js"></script>
+    <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+    <script>
+        const { el, mount, setChildren, text } = redom;
+    </script>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://unpkg.com/popper.js@1.14.4/dist/umd/popper.js" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    
+    
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+    <script src="main.js"></script>
+    <script src="leaderboard.js"></script>
+    <script src="profile.js"></script>
+    <!-- <script src="join.js"></script> -->
+</html>
