@@ -1,13 +1,24 @@
 // firebase configuration
+// var firebaseConfig = {
+//   apiKey: "AIzaSyC4ygtft0BU4qkF_kVWv3a6etBqbaloT_s",
+//   authDomain: "fitmeasure-ac726.firebaseapp.com",
+//   databaseURL: "https://fitmeasure-ac726.firebaseio.com",
+//   projectId: "fitmeasure-ac726",
+//   storageBucket: "fitmeasure-ac726.appspot.com",
+//   messagingSenderId: "1020504775390",
+//   appId: "1:1020504775390:web:6d8432d029a3e540b6004f",
+//   measurementId: "G-ZBXQWMKM2J",
+// };
+
 var firebaseConfig = {
-  apiKey: "AIzaSyC4ygtft0BU4qkF_kVWv3a6etBqbaloT_s",
-  authDomain: "fitmeasure-ac726.firebaseapp.com",
-  databaseURL: "https://fitmeasure-ac726.firebaseio.com",
-  projectId: "fitmeasure-ac726",
-  storageBucket: "fitmeasure-ac726.appspot.com",
-  messagingSenderId: "1020504775390",
-  appId: "1:1020504775390:web:6d8432d029a3e540b6004f",
-  measurementId: "G-ZBXQWMKM2J",
+  apiKey: "AIzaSyBpJwomji6stvyxJwUx_zVH4DTFWxcSRKw",
+  authDomain: "quicknsweaty.firebaseapp.com",
+  databaseURL: "https://quicknsweaty.firebaseio.com",
+  projectId: "quicknsweaty",
+  storageBucket: "quicknsweaty.appspot.com",
+  messagingSenderId: "1080041657336",
+  appId: "1:1080041657336:web:0fd11aaa74c212cd857c0d",
+  measurementId: "G-Q8EYB47KGB"
 };
 
 firebase.initializeApp(firebaseConfig);
