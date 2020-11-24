@@ -137,7 +137,7 @@ function selectChallenge(i) {
                     '<i class="material-icons nav__icon">play_circle_filled</i>',
                   onclick: () => {
                     window.open(
-                      `https://firebasestorage.googleapis.com/v0/b/fitmeasure-ac726.appspot.com/o/${user[0]}%2F${challId}?alt=media`
+                      `https://firebasestorage.googleapis.com/v0/b/quicknsweaty.appspot.com/o/${user[0]}%2F${challId}?alt=media`
                     );
                   },
                 })
