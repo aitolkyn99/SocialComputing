@@ -98,7 +98,6 @@
               <label for="description">Challenge description:</label>
             </div>
             <div class="md-form">
-
               <input placeholder=" " type="text" id="criteria" class="form-control" required>
               <label for="criteria">Scoring criteria:</label>
             </div>  
@@ -176,19 +175,24 @@
               <strong>What could we improve?</strong>
             </p> -->
             <!--Basic textarea-->
-            <div class="md-form">
+            <!-- <div class="md-form">
               <textarea type="text" id="form79textarea" class="md-textarea form-control" rows="3"></textarea>
               <label for="form79textarea">Your message</label>
+            </div> -->
+
+            <div class="md-form">
+              <input placeholder=" " type="text" id="criteria" class="form-control" required>
+              <label for="criteria">Your message:</label>
             </div>
     
           </div>
     
           <!--Footer-->
           <div class="modal-footer justify-content-center">
-            <a type="button" class="btn btn-primary waves-effect waves-light">Send
+            <a type="button" onclick = handleReport() class="btn btn-primary waves-effect waves-light">Send
               <i class="fa fa-paper-plane ml-1"></i>
             </a>
-            <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cancel</a>
+            <a type="button" id = "reportCancel" style="color:blue !important" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cancel</a>
           </div>
         </div>
       </div>

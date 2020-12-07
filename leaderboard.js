@@ -216,12 +216,27 @@ document
   .addEventListener("change", handleFileSelect, false);
 
 // 3. change pictures
-// event.preventDefault();
+var reportUID;
+var reportCID;
 function handleClick (uid, cid){
   // event.stopPropagation();
   // event.stopImmediatePropagation();
   console.log(uid)
   console.log(cid)
-
-  //(... rest of your JS code)
+  reportCID = cid
+  reportUID = uid
 };
+
+const handleReport = async () => {
+  const snapshot = await db.collection("reports").doc(reportUID).get();
+  if (snapshot.data() && snapshot.data()[reportCID]) {
+    db.collection("reports").doc(reportUID).set({
+      [reportCID]: snapshot.data()[reportCID]+1,
+    });
+  } else {
+    db.collection("reports").doc(reportUID).set({
+      [reportCID]: 1,
+    });
+  }
+  document.getElementById("reportCancel").click();
+}
