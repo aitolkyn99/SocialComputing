@@ -18,7 +18,7 @@ var firebaseConfig = {
   storageBucket: "quicknsweaty.appspot.com",
   messagingSenderId: "1080041657336",
   appId: "1:1080041657336:web:0fd11aaa74c212cd857c0d",
-  measurementId: "G-Q8EYB47KGB"
+  measurementId: "G-Q8EYB47KGB",
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -58,11 +58,11 @@ const getUserChallenges = async (id) => {
 
 var currentChallenge;
 
-function fillModal(titl, desc, cid) {
+function fillModal(titl, desc, cid, criteria) {
   document.getElementById("exampleModalCenterTitle").innerText = titl;
   $("#exampleModalCenter").find(".desc")[0].innerHTML =
     desc +
-    '<p style = "color: red"><br> In order to join this challenge, you need to fill the form below. Please upload a video to validate your result. <br></p>';
+    `<p>${criteria}</p><p style = "color: red"><br> In order to join this challenge, you need to fill the form below. Please upload a video to validate your result. <br></p>`;
   currentChallenge = cid;
 }
 
@@ -116,6 +116,8 @@ const getChallenges = async () => {
           challenge.description +
           '","' +
           challenge.id +
+          '","' +
+          challenge.criteria +
           '")'
       );
       if (
@@ -178,6 +180,7 @@ const submit = () => {
   const formValues = {
     title: document.getElementById("title").value,
     description: document.getElementById("description").value,
+    criteria: document.getElementById("criteria").value,
   };
   db.collection("challenges")
     .doc(challengeId)

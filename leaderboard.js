@@ -133,12 +133,15 @@ function selectChallenge(i) {
                 el("td", { innerText: nick }),
                 el("td", { innerText: curScore }),
                 el("td", {
+                  style: { cursor: "pointer" },
+                  "data-toggle": "modal",
+                  "data-target": "#modal1",
                   innerHTML:
                     '<i class="material-icons nav__icon">play_circle_filled</i>',
                   onclick: () => {
-                    window.open(
-                      `https://firebasestorage.googleapis.com/v0/b/quicknsweaty.appspot.com/o/${user[0]}%2F${challId}?alt=media`
-                    );
+                    document.getElementById(
+                      "videoModal"
+                    ).src = `https://firebasestorage.googleapis.com/v0/b/quicknsweaty.appspot.com/o/${user[0]}%2F${challId}?alt=media`;
                   },
                 })
               )
@@ -146,8 +149,7 @@ function selectChallenge(i) {
           }
 
           place.innerHTML = `<strong> Your rank is ${rank} </strong>`;
-          place.style.color = '#d2b309'
-
+          place.style.color = "#d2b309";
         };
 
         forLoop();
