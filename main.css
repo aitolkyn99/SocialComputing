@@ -119,7 +119,7 @@ body {
 #challenges .card-body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("img/c1.jpg");
-  z-index: ;
+  /* z-index: ; */
   background-size: contain;
   background-color: #cccccc;
 }
@@ -166,4 +166,8 @@ body {
 
 #challenges .card-title .bjoin {
   background-color:#8a8254
+}
+
+.report {
+  cursor: pointer;
 }

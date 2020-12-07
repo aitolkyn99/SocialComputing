@@ -140,7 +140,8 @@ function selectChallenge(i) {
                       `https://firebasestorage.googleapis.com/v0/b/quicknsweaty.appspot.com/o/${user[0]}%2F${challId}?alt=media`
                     );
                   },
-                })
+                }),
+                el("td",  el("p.report", { "data-toggle": "modal", "data-target": "#modalPoll-1", onclick: () => { handleClick(snapshot.id, challId) }, innerText: "Report"})  )
               )
             );
           }
@@ -213,3 +214,12 @@ document
   .addEventListener("change", handleFileSelect, false);
 
 // 3. change pictures
+// event.preventDefault();
+function handleClick (uid, cid){
+  // event.stopPropagation();
+  // event.stopImmediatePropagation();
+  console.log(uid)
+  console.log(cid)
+
+  //(... rest of your JS code)
+};
