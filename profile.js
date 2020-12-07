@@ -71,12 +71,15 @@ const getProfile = async (profileId = userId) => {
         }),
         el("td", { innerText: element.participants[profileId].score }),
         el("td", {
+          style: { cursor: "pointer" },
+          "data-toggle": "modal",
+          "data-target": "#modal1",
           innerHTML:
             '<i class="material-icons nav__icon">play_circle_filled</i>',
           onclick: () => {
-            window.open(
-              `https://firebasestorage.googleapis.com/v0/b/quicknsweaty.appspot.com/o/${profileId}%2F${element.id}?alt=media`
-            );
+            document.getElementById(
+              "videoModal"
+            ).src = `https://firebasestorage.googleapis.com/v0/b/quicknsweaty.appspot.com/o/${profileId}%2F${element.id}?alt=media`;
           },
         })
       )
