@@ -61,8 +61,9 @@ var currentChallenge;
 function fillModal(titl, desc, cid, criteria) {
   document.getElementById("exampleModalCenterTitle").innerText = titl;
   $("#exampleModalCenter").find(".desc")[0].innerHTML =
+    `Description: ` +
     desc +
-    `<p>${criteria}</p><p style = "color: red"><br> In order to join this challenge, you need to fill the form below. Please upload a video to validate your result. <br></p>`;
+    `<p>Scoring criteria: ${criteria}</p><p style = "color: red"><br> In order to join this challenge, you need to fill the form below. Please upload a video to validate your result. <br></p>`;
   currentChallenge = cid;
 }
 
