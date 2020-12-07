@@ -144,7 +144,7 @@ function selectChallenge(i) {
                     ).src = `https://firebasestorage.googleapis.com/v0/b/quicknsweaty.appspot.com/o/${user[0]}%2F${challId}?alt=media`;
                   },
                 }),
-                el("td",  el("p.report", { "data-toggle": "modal", "data-target": "#modalPoll-1", onclick: () => { handleClick(snapshot.id, challId) }, innerText: "Report"})  )
+                el("td",  el("p.report", { "data-toggle": "modal", "data-target": "#modalPoll-1", onclick: () => { handleClick(snapshot.id, challId) }}, el("i.fas fa-exclamation"))  )
               )
             );
           }
