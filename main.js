@@ -28,7 +28,7 @@ const getRemaining = (countDownDate) => {
   // Get today's date and time
   var now = new Date().getTime();
   // Find the distance between now and the count down date
-  var distance = countDownDate + 86400000 - now;
+  var distance = countDownDate + (72 * 60 * 60 * 1000) - now;
   if (distance < 0) {
     return false;
   }
@@ -280,7 +280,7 @@ function setTimer(i, countDownDate) {
       var now = new Date().getTime();
 
       // Find the distance between now and the count down date
-      var distance = countDownDate - now + 86400000;
+      var distance = countDownDate - now + (72 * 60 * 60 * 1000);
 
       // Time calculations for days, hours, minutes and seconds
       var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -292,7 +292,7 @@ function setTimer(i, countDownDate) {
 
       // Display the result in the element with id="demo"
 
-      elem[0].innerText = hours + "h " + minutes + "m " + seconds + "s ";
+      elem[0].innerText = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
       // If the count down is finished, write some text
       if (distance < 0) {
