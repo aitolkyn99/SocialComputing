@@ -111,21 +111,50 @@ function selectChallenge(i) {
         });
         var rank;
         tbody.innerHTML = "";
-
+        console.log(items)
         var i = 0;
+        var nickNow;
+        // const forLoop0 = async (_) => {
+        for (var ix in items) {
+          ix = items[ix];
+          // console.log(user)
+          var curUser = ix[0];
+          i += 1;
+          // var className = "";
+          if (curUser == currentUser) {
+            // className = "#me";
+            rank = i;
+            db.collection("users").doc(ix[0]).get().then((snapshot) =>
+              nickNow = snapshot.data().nickname )
+          }
+          
+        }
+        // }
+        
+        
+        // items.pop()
+        
         const forLoop = async (_) => {
-          for (var user in items) {
+          // forLoop0()
+          i = 0
+          console.log(items)
+          for (var user in items) (async function(user) {
+            console.log(user)
             user = items[user];
+            // console.log(user)
             var curUser = user[0];
             var curScore = user[1];
+            var curSrc = `https://firebasestorage.googleapis.com/v0/b/quicknsweaty.appspot.com/o/${user[0]}%2F${challId}?alt=media`
             const snapshot = await db.collection("users").doc(user[0]).get();
             const nick = snapshot.data().nickname;
             i += 1;
             var className = "";
-            if (curUser == currentUser) {
+            // console.log(nickNow)
+            if (nick == nickNow) {
               className = "#me";
-              rank = i;
+            //   rank = i;
             }
+            console.log(user)
             tbody.appendChild(
               el(
                 `tr${className}`,
@@ -139,15 +168,12 @@ function selectChallenge(i) {
                   innerHTML:
                     '<i class="material-icons nav__icon">play_circle_filled</i>',
                   onclick: () => {
-                    document.getElementById(
-                      "videoModal"
-                    ).src = `https://firebasestorage.googleapis.com/v0/b/quicknsweaty.appspot.com/o/${user[0]}%2F${challId}?alt=media`;
+                    getVideo(curSrc)
                   },
-                }),
-                el("td",  el("p.report", { "data-toggle": "modal", "data-target": "#modalPoll-1", onclick: () => { handleClick(snapshot.id, challId) }}, el("i.fas fa-exclamation"))  )
+                }),                el("td",  el("p.report", { "data-toggle": "modal", "data-target": "#modalPoll-1", onclick: () => { handleClick(snapshot.id, challId) }}, el("i.fas fa-exclamation"))  )
               )
             );
-          }
+          }) (user)
 
           place.innerHTML = `<strong> Your rank is ${rank} </strong>`;
           place.style.color = "#d2b309";
@@ -160,6 +186,13 @@ function selectChallenge(i) {
     place.innerHTML = `<p>You have not participated in any challenge yet. Click <a class="bluediv" onclick="Router('chal'); getChallenges()">here</a> to see available challenges</p>`;
   }
 }
+
+function getVideo(src) {
+  document.getElementById(
+    "videoModal"
+  ).src = src;
+}
+
 var myFile;
 function clickJoin() {
   var file = myFile;
